@@ -2,23 +2,36 @@
 using namespace std;
 class Student
 {
-	private:
+	public:
 		int id;
 		char name[20];
-	public:
 		void setStudent(){
 			cout<<"\nEnter the Student ID and Name:";
 			cin>>id>>name;
 		}
-		void getStudent(){
+};
+class Result:public Student
+{
+	private:
+		float per;
+	public:
+		void setResult(){
+			cout<<"Enter the Percentage:";
+			cin>>per;
+		}
+		void showResult()
+		{
 			cout<<"\nId="<<id;
 			cout<<"\nName="<<name;
+			cout<<"\nPercentage="<<per;
 		}
 };
 int main()
 {
-	Student s;
-	s.setStudent();
-	s.getStudent();
+	Result r;
+	r.setStudent();
+	//s.getStudent();
+	r.setResult();
+	r.showResult();
 	return 0;
 }
